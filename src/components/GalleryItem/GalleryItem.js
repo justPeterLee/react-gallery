@@ -9,6 +9,10 @@ export function GalleryItem(props) {
     setShowDescription(!showDescription);
   };
 
+  const addLike = () => {
+    props.onAddLike(props.id)
+  }
+
   return (
     <div className="item-container">
       {!showDescription ? (
@@ -17,7 +21,7 @@ export function GalleryItem(props) {
           style={{ backgroundImage: `url(${props.path})` }}
         >
           <div className="description-overlay" onClick={toggleDesc}>
-            show description
+            (show description)
           </div>
         </div>
       ) : (
@@ -29,7 +33,8 @@ export function GalleryItem(props) {
         </div>
       )}
       <div className="likes-container">
-        <p>{`likes · ${props.likes}`}</p>
+        <p className="likes-text" onClick={addLike}>likes · </p><p>{props.likes}</p>
+
       </div>
     </div>
   );

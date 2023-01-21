@@ -19,6 +19,15 @@ function App() {
     })
   }
 
+  const addLike = (id) => {
+    axios.put(`/gallery/like/${id}`)
+    .then((response)=>{
+      fetchGallery()
+    })
+    .catch((error)=>{
+      console.log('error with like PUT request, ', error)
+    })
+  }
   useEffect(()=>{fetchGallery()}, []);
 
     return (
@@ -26,7 +35,7 @@ function App() {
         <div className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </div>
-        <GalleryList galleryData={galleryList}/>
+        <GalleryList galleryData={galleryList} onAddLike={addLike}/>
       </div>
     );
 }

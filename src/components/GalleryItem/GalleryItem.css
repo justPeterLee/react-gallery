@@ -13,14 +13,14 @@
 
 .likes-container{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
 }
-.likes-container p{
-    width: 100px
+.likes-text{
+    width: 50px
 }
 
-.likes-container p:hover{
+.likes-text:hover{
     color: #CD5C5C;
     cursor: pointer;
 }
