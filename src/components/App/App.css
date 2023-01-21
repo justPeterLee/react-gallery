@@ -1,8 +1,13 @@
 .App {
   text-align: center;
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-header {
+  width: 100%;
   background-color: #222;
   padding: 1em;
   color: white;
