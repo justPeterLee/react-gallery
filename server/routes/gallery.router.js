@@ -7,10 +7,17 @@ const galleryItems = require('../modules/gallery.data');
 // PUT Route
 router.put('/like/:id', (req, res) => {
     console.log(req.params);
+    console.log(req.body)
+    const liked = req.body.liked
     const galleryId = req.params.id;
     for(const galleryItem of galleryItems) {
         if(galleryItem.id == galleryId) {
-            galleryItem.likes += 1;
+            if(!liked){
+                galleryItem.likes += 1;
+            }else{
+                galleryItem.likes -= 1;
+            }
+            
         }
     }
     res.sendStatus(200);

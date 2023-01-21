@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 
 import "./GalleryItem.css";
-
+import {AiOutlineHeart, AiFillHeart} from 'react-icons/ai'
 export function GalleryItem(props) {
   const [showDescription, setShowDescription] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
 
+  const toggleLike = ()=>{
+    setIsLiked(!isLiked)
+  }
   const toggleDesc = () => {
     setShowDescription(!showDescription);
   };
 
   const addLike = () => {
-    props.onAddLike(props.id)
+    toggleLike()
+    props.onAddLike({id: props.id, isLiked: isLiked})
+    
   }
 
   return (
@@ -33,8 +39,7 @@ export function GalleryItem(props) {
         </div>
       )}
       <div className="likes-container">
-        <p className="likes-text" onClick={addLike}>likes · </p><p>{props.likes}</p>
-
+       {!isLiked ? <p className="likes-text" onClick={addLike}><AiOutlineHeart/></p> : <p className="likes-text" style={{color:'#CD5C5C'}}onClick={addLike}><AiFillHeart/></p>}<p>{props.likes}</p>
       </div>
     </div>
   );

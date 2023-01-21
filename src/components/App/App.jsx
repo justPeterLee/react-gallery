@@ -20,7 +20,7 @@ function App() {
   }
 
   const addLike = (id) => {
-    axios.put(`/gallery/like/${id}`)
+    axios.put(`/gallery/like/${id.id}`, {liked: id.isLiked})
     .then((response)=>{
       fetchGallery()
     })

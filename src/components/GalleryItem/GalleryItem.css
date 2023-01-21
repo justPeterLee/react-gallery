@@ -2,6 +2,9 @@
     border-radius: 2px;
     box-shadow: 2px 3px 4px 1px #505050;
     padding: 1rem;
+    padding-bottom: 0;
+
+    background-color: #F8F8FF;
 }
 .picture-container{
     width: 300px;
@@ -14,10 +17,16 @@
 .likes-container{
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+}
+.likes-container p{
+    font-size: 20px;
+    color: #B0B0B0;
 }
 .likes-text{
-    width: 50px
+    width: 50px;
+    color:	#B0B0B0;
+    font-size: 25px;
+
 }
 
 .likes-text:hover{
