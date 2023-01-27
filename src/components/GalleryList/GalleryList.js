@@ -15,6 +15,7 @@ export function GalleryList(props) {
                 description={picture.description}
                 likes={picture.likes}
                 id={picture.id}
+                isLiked={picture.isLiked}
 
                 onAddLike={onAddLike}
             />

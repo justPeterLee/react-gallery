@@ -14,8 +14,10 @@ router.put('/like/:id', (req, res) => {
         if(galleryItem.id == galleryId) {
             if(!liked){
                 galleryItem.likes += 1;
+                galleryItem.isLiked = true;
             }else{
                 galleryItem.likes -= 1;
+                galleryItem.isLiked = false;
             }
             
         }
