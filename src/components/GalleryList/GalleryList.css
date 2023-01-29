@@ -5,3 +5,11 @@
 
 
 }
+
+@media only screen and (max-width: 1500px) {
+    .gallery-container{
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap:2rem;
+    }
+}
